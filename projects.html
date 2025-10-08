@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="projects-body">
+    <header>
+        <h1>Muhammad Abu-Bakr - Projects</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Featured Projects</h2>
+            
+            
+            <article class="project-card">
+                <h3>1. 🎯 First-Person Shooter (FPS) Game Prototype – Unity</h3>
+                <div class="media-container">
+                    <video controls width="100%" poster="assets/images/game-poster.jpg">
+                        <source src="assets\videos\demo.mp4" type="video/mp4">
+                        <source src="assets\videos\demo.mp4" type="video/webm">
+                        Your browser does not support the video.
+                    </video>
+                </div>
+                <p>
+                    This is a learning-focused FPS game project built using Unity, where I'm exploring and implementing the core mechanics of a first-person shooter. The current build focuses on setting up a smooth and functional FPS controller including movement, camera look, and crouch mechanics — all using Unity's new Input System.
+                </p>
+                <audio controls class="project-audio">
+                    <source src="assets\audio\demo.mp3" type="audio/mpeg">
+                    <source src="assets\audio\demo.mp3" type="audio/ogg">
+                    Check your internet connectivity.
+                </audio>
+            </article>
+
+
+            <article class="project-card">
+                <h3>2. Weather App</h3>
+                <p>A simple yet elegant Flutter application that displays real-time weather information using OpenWeatherMap's public API. It allows users to view weather data for their current location or search for weather in any city.</p>
+            </article>
+
+            <article class="project-card">
+                <h3>3. GuessMyCar </h3>
+                <p>
+                    A knowledge-based agent that tries to guess which car you're thinking of by asking yes/no questions.
+                </p>
+                <audio controls class="project-audio">
+                    <source src="assets\audio\demo.mp3" type="audio/mpeg">
+                    <source src="assets\audio\demo.mp3" type="audio/ogg">
+                    Your browser does not support the audio element.
+                </audio>
+            </article>
+
+ 
+            <article class="project-card">
+                <h3>4. 🐤 Flappy Bird Clone (Unity)</h3>
+                <div class="media-container">
+                    <video controls width="100%">
+                        <source src="assets\videos\demo.mp4" type="video/mp4">
+                        <source src="assets\videos\demo.mp4" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p>
+                    A modern remake of the classic Flappy Bird, built using the Unity Engine (C#). This project focuses on replicating the core mechanics — tap to flap, dodge obstacles, and climb the leaderboard. Designed for both learning and fun, and currently in development.
+                </p>
+            </article>
+        </section>
+
+
+        <section class="contact-form-section">
+            <h2>Get In Touch</h2>
+            <form class="contact-form" id="projectContactForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                </div>
+
+                <div class="form-group">
+                    <label for="projectType">Project Type</label>
+                    <select id="projectType" name="projectType">
+                        <option value="">Select a project type</option>
+                        <option value="web-development">Web Development</option>
+                        <option value="mobile-app">Mobile App</option>
+                        <option value="game-development">Game Development</option>
+                        <option value="data-analysis">Data Analysis</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Project Budget</label>
+                    <input type="range" id="budget" name="budget" min="500" max="10000" step="500" value="2500">
+                    <span id="budgetValue">$2500</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="startDate">Project Start Date</label>
+                    <input type="date" id="startDate" name="startDate">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Project Details *</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="Describe your project requirements, timeline, and any specific features you need..."></textarea>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">Subscribe to my project updates newsletter</label>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Project Inquiry</button>
+            </form>
+        </section>
+
+        <section class="demo-section">
+            <h2>Project Demo Reel</h2>
+            <div class="video-demo">
+                <video controls width="100%" poster="assets/images/demo-reel-poster.jpg">
+                    <source src="aassets\videos\demo.mp4" type="video/mp4">
+                    <source src="assets\videos\demo.mp4" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-controls-custom">
+                    <p>Watch my project compilation showcasing various development skills and completed works.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        
+        document.getElementById('budget').addEventListener('input', function() {
+            document.getElementById('budgetValue').textContent = '$' + this.value;
+        });
+
+        
+        document.getElementById('projectContactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+           
+            const formData = new FormData(this);
+            const formProps = Object.fromEntries(formData);
+            
+            console.log('Form submitted:', formProps);
+            
+            
+            alert('Thank you for your project inquiry! I will get back to you soon.');
+            this.reset();
+            document.getElementById('budgetValue').textContent = '$2500';
+        });
+
+        
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('startDate').min = today;
+    </script>
+
+        <footer>
+        <p>&copy 2025 Muhammad Abu-Bakr | All rights reserved</p>
+    </footer>
+
+</body>
+</html>
