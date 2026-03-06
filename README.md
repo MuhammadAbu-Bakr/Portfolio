@@ -1,4 +1,4 @@
-# Muhammad Abdullah - Professional Portfolio
+# Muhammad Abu-Bakr - Professional Portfolio
 
 A modern, multi-page portfolio website built with React, Tailwind CSS, and Supabase.
 
